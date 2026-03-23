@@ -198,11 +198,11 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
               V2.0 NOW LIVE • ENTERPRISE AGENT ORCHESTRATION
             </span>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
-              Turn Complex Intent into <br />
-              <span className="text-gradient">Autonomous Execution</span>
+              Programmatic Supply Chain: <br />
+              <span className="text-gradient">Scale Results, Not Headcount</span>
             </h1>
             <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Nexus AI is the orchestration layer for the agentic era. Build, deploy, and scale multi-agent workflows that connect your entire stack.
+              Build AI workforces that run your procurement and logistics playbooks on autopilot. From strategic sourcing to global risk mitigation — scale your operations without adding complexity.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button onClick={() => setCurrentPage('contact')} className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2">
@@ -279,11 +279,11 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
-                AI is powerful, but <br />
-                <span className="text-white/40">execution is fragmented.</span>
+                Your team is buried in <br />
+                <span className="text-white/40">tasks humans shouldn't do.</span>
               </h2>
               <p className="text-lg text-white/50 mb-10 leading-relaxed">
-                Most companies have the models, but lack the plumbing. Disconnected tools, siloed data, and manual handoffs prevent AI from being truly autonomous.
+                AI is powerful, but adoption is fragmented. Nexus AI provides the enterprise-grade infrastructure to delegate repetitive operational tasks to an AI workforce.
               </p>
               <div className="space-y-6">
                 {[
@@ -452,7 +452,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
+              src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1000" 
               alt="Nexus AI Team" 
               className="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
               referrerPolicy="no-referrer"
@@ -537,7 +537,7 @@ const ProductPage = () => {
             </div>
             <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200" 
                 alt="Agent Builder UI" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
@@ -549,7 +549,7 @@ const ProductPage = () => {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1200" 
                 alt="Orchestration Graph" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
@@ -595,7 +595,7 @@ const ProductPage = () => {
             </div>
             <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
                 alt="Knowledge Base UI" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
