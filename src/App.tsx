@@ -27,7 +27,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 // --- Types ---
-type Page = 'home' | 'product' | 'use-cases' | 'pricing' | 'docs' | 'about' | 'blog' | 'contact';
+type Page = 'home' | 'product' | 'use-cases' | 'docs' | 'about' | 'blog' | 'contact';
 
 // --- Components ---
 
@@ -44,8 +44,8 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrent
   const navItems: { label: string; id: Page }[] = [
     { label: 'Product', id: 'product' },
     { label: 'Use Cases', id: 'use-cases' },
-    { label: 'Pricing', id: 'pricing' },
     { label: 'Docs', id: 'docs' },
+    { label: 'About', id: 'about' },
   ];
 
   return (
@@ -144,7 +144,6 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
             <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Agent Builder</button></li>
             <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Orchestration</button></li>
             <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Integrations</button></li>
-            <li><button onClick={() => setCurrentPage('pricing')} className="hover:text-brand-primary transition-colors">Pricing</button></li>
           </ul>
         </div>
 
@@ -394,9 +393,9 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
       <section className="py-32 px-6 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Real Outcomes, Real Workflows</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">AI-Driven Supply Chain Excellence</h2>
             <p className="text-lg text-white/50 max-w-2xl mx-auto">
-              See how industry leaders are using Nexus AI to automate their most complex business processes.
+              Nexus AI orchestrates complex procurement and logistics workflows, moving from manual tracking to autonomous execution.
             </p>
           </div>
 
@@ -405,26 +404,26 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
               { 
                 tag: "Procurement", 
                 title: "Autonomous Sourcing Agent", 
-                desc: "Automatically triages incoming requests, searches vendor databases, and generates RFPs based on historical pricing data.",
+                desc: "Automatically triages incoming requests, searches global vendor databases, and generates RFPs based on historical pricing and quality data.",
                 outcome: "85% reduction in sourcing cycle time"
               },
               { 
-                tag: "Customer Support", 
-                title: "Tier-2 Resolution Copilot", 
-                desc: "Agents that can navigate internal dashboards, verify orders, and issue refunds without human intervention.",
-                outcome: "40% increase in First Contact Resolution"
+                tag: "Logistics", 
+                title: "Multi-Carrier Orchestrator", 
+                desc: "Agents that coordinate between carriers, warehouses, and customs, resolving delays and optimizing routes in real-time.",
+                outcome: "22% decrease in shipping costs"
               },
               { 
-                tag: "Sales Ops", 
-                title: "Intelligent Lead Researcher", 
-                desc: "Scours the web for company news, financial reports, and social signals to prepare personalized briefing docs for AEs.",
-                outcome: "15 hours saved per week per rep"
+                tag: "Inventory", 
+                title: "Predictive Stock Replenishment", 
+                desc: "Monitors stock levels across global nodes and autonomously triggers reorders based on lead times and demand signals.",
+                outcome: "Zero stock-outs on critical SKUs"
               },
               { 
-                tag: "Data Analysis", 
-                title: "Automated Reporting Agent", 
-                desc: "Connects to SQL databases, runs complex queries, and generates executive summaries in Slack every morning.",
-                outcome: "Real-time insights without manual ETL"
+                tag: "Risk Management", 
+                title: "Supplier Risk Monitor", 
+                desc: "Scours financial reports, news, and geopolitical signals to alert and reroute supply chains before disruptions occur.",
+                outcome: "Real-time resilience for global ops"
               }
             ].map((item, i) => (
               <div key={i} className="glass-card overflow-hidden flex flex-col md:flex-row">
@@ -444,6 +443,34 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
+              alt="Nexus AI Team" 
+              className="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute -bottom-6 -right-6 glass-card p-8 max-w-xs">
+              <p className="text-sm italic text-white/70">"Our mission is to bridge the gap between AI potential and operational reality in the supply chain."</p>
+              <div className="mt-4 font-bold text-brand-primary">— Nexus AI Founders</div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-4xl font-display font-bold mb-8">Built by Supply Chain Experts, <span className="text-gradient">Powered by AI.</span></h2>
+            <p className="text-lg text-white/50 mb-6 leading-relaxed">
+              Nexus AI was founded by a team of logistics veterans and AI researchers from DeepMind and MIT. We saw firsthand how fragmented data and manual processes were crippling global trade.
+            </p>
+            <p className="text-lg text-white/50 mb-10 leading-relaxed">
+              Today, we provide the "Agent OS" that powers the world's most resilient supply chains, enabling autonomous execution from the first mile to the last.
+            </p>
+            <button onClick={() => setCurrentPage('about')} className="btn-secondary">Learn More About Our Vision</button>
           </div>
         </div>
       </section>
@@ -508,15 +535,25 @@ const ProductPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="glass-card aspect-video bg-white/5 border-white/10 flex items-center justify-center text-white/20 font-mono text-sm">
-              [Agent Builder UI Preview]
+            <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
+              <img 
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" 
+                alt="Agent Builder UI" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
 
           {/* Feature 2 */}
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 glass-card aspect-video bg-white/5 border-white/10 flex items-center justify-center text-white/20 font-mono text-sm">
-              [Orchestration Graph Preview]
+            <div className="order-2 lg:order-1 glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200" 
+                alt="Orchestration Graph" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <div className="w-12 h-12 rounded-xl bg-brand-secondary/10 text-brand-secondary flex items-center justify-center mb-6">
@@ -556,8 +593,13 @@ const ProductPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="glass-card aspect-video bg-white/5 border-white/10 flex items-center justify-center text-white/20 font-mono text-sm">
-              [Knowledge Base UI Preview]
+            <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
+              <img 
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200" 
+                alt="Knowledge Base UI" 
+                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </div>
@@ -904,37 +946,37 @@ const UseCasesPage = () => {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Industry Solutions</h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Supply Chain & Procurement</h1>
           <p className="text-xl text-white/50 max-w-2xl mx-auto">
-            Discover how Nexus AI is transforming operations across every major vertical.
+            Orchestrating the future of global trade with autonomous agents.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {[
             { 
-              title: "AI for Procurement", 
-              problem: "Manual vendor sourcing and RFP management is slow and error-prone.",
-              solution: "Autonomous agents that triage requests, search databases, and draft documents.",
-              outcome: "80% faster cycle times and 15% cost savings."
+              title: "Autonomous Strategic Sourcing", 
+              problem: "Manual vendor discovery and RFP management takes months and misses optimal pricing.",
+              solution: "Agents that scan global markets, verify supplier credentials, and run automated RFP cycles.",
+              outcome: "80% faster sourcing cycle and 12% average cost reduction."
             },
             { 
-              title: "AI for Customer Support", 
-              problem: "High volume of repetitive Tier-1 and Tier-2 tickets overwhelming human staff.",
-              solution: "Multi-agent workflows that can navigate internal tools and resolve issues autonomously.",
-              outcome: "50% reduction in ticket volume and instant response times."
+              title: "Real-time Logistics Orchestration", 
+              problem: "Fragmented communication between carriers leads to delays and hidden costs.",
+              solution: "Multi-agent systems that track shipments, handle customs documentation, and reroute dynamically.",
+              outcome: "95% on-time delivery rate and zero manual tracking required."
             },
             { 
-              title: "AI for Sales Operations", 
-              problem: "Sales reps spend 40% of their time on research and data entry.",
-              solution: "Intelligent research agents that prepare personalized briefing docs and update CRM.",
-              outcome: "25% increase in quota attainment and better lead quality."
+              title: "Intelligent Inventory Management", 
+              problem: "Overstocking and stock-outs due to disconnected demand signals and lead times.",
+              solution: "Agents that monitor ERP data and external market trends to trigger autonomous replenishment.",
+              outcome: "30% reduction in carrying costs and 100% availability of critical parts."
             },
             { 
-              title: "AI for Financial Services", 
-              problem: "Compliance and fraud detection require manual review of thousands of transactions.",
-              solution: "Orchestrated agents that perform real-time audit and flag anomalies with high precision.",
-              outcome: "99% detection rate and full audit trail for every decision."
+              title: "Supplier Risk & Compliance", 
+              problem: "Inability to monitor thousands of suppliers for financial, environmental, or geopolitical risks.",
+              solution: "Agents that continuously audit supplier data and news signals to flag risks instantly.",
+              outcome: "Proactive mitigation of 90% of potential supply chain disruptions."
             }
           ].map((item, i) => (
             <div key={i} className="glass-card p-12">
@@ -975,7 +1017,6 @@ export default function App() {
       case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
       case 'product': return <ProductPage />;
       case 'use-cases': return <UseCasesPage />;
-      case 'pricing': return <PricingPage />;
       case 'docs': return <DocsPage />;
       case 'about': return <AboutPage />;
       case 'blog': return <BlogPage />;
