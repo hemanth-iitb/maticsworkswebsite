@@ -43,8 +43,9 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrent
 
   const navItems: { label: string; id: Page }[] = [
     { label: 'Product', id: 'product' },
-    { label: 'Use Cases', id: 'use-cases' },
-    { label: 'Docs', id: 'docs' },
+    { label: 'Function', id: 'use-cases' },
+    { label: 'Agents', id: 'home' }, // Or a dedicated agents page if we had one
+    { label: 'Resources', id: 'docs' },
     { label: 'About', id: 'about' },
   ];
 
@@ -58,7 +59,7 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrent
           <div className="w-8 h-8 bg-linear-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform">
             <Cpu size={20} className="text-black" />
           </div>
-          <span className="text-xl font-display font-bold tracking-tight">NEXUS AI</span>
+          <span className="text-xl font-display font-bold tracking-tight uppercase">Delegatio AI</span>
         </div>
 
         {/* Desktop Nav */}
@@ -75,8 +76,8 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrent
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <button onClick={() => setCurrentPage('contact')} className="text-sm font-medium text-white/70 hover:text-white transition-colors">Log in</button>
-          <button onClick={() => setCurrentPage('contact')} className="btn-primary py-2 px-5 text-sm">Start Building</button>
+          <button onClick={() => setCurrentPage('contact')} className="text-sm font-medium text-white/70 hover:text-white transition-colors">Sign in</button>
+          <button onClick={() => setCurrentPage('contact')} className="btn-primary py-2 px-5 text-sm">Contact sales</button>
         </div>
 
         {/* Mobile Toggle */}
@@ -126,10 +127,10 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
             <div className="w-8 h-8 bg-linear-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
               <Cpu size={20} className="text-black" />
             </div>
-            <span className="text-xl font-display font-bold tracking-tight">NEXUS AI</span>
+            <span className="text-xl font-display font-bold tracking-tight uppercase">Delegatio AI</span>
           </div>
           <p className="text-white/50 max-w-xs mb-8">
-            The enterprise execution layer for autonomous AI agents. From intent to action, powered by orchestration.
+            Scale GTM results, without scaling headcount. The best way to sell with AI.
           </p>
           <div className="flex gap-4">
             <button className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"><Twitter size={18} /></button>
@@ -141,8 +142,8 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
         <div>
           <h4 className="font-semibold mb-6">Product</h4>
           <ul className="space-y-4 text-white/50 text-sm">
-            <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Agent Builder</button></li>
-            <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Orchestration</button></li>
+            <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Copilot</button></li>
+            <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Autopilot</button></li>
             <li><button onClick={() => setCurrentPage('product')} className="hover:text-brand-primary transition-colors">Integrations</button></li>
           </ul>
         </div>
@@ -169,7 +170,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
-        <p>© 2026 Nexus AI Orchestration Inc. All rights reserved.</p>
+        <p>© 2026 Delegatio AI Inc. All rights reserved.</p>
         <div className="flex gap-8">
           <span>Status: All Systems Operational</span>
           <span>Built for the future of work</span>
@@ -194,194 +195,140 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-brand-primary mb-6">
-              V2.0 NOW LIVE • ENTERPRISE AGENT ORCHESTRATION
-            </span>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
-              Programmatic Supply Chain: <br />
-              <span className="text-gradient">Scale Results, Not Headcount</span>
+            <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight">
+              Scale GTM results, <br />
+              <span className="text-gradient">without scaling headcount</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Build AI workforces that run your procurement and logistics playbooks on autopilot. From strategic sourcing to global risk mitigation — scale your operations without adding complexity.
+            <p className="text-lg md:text-2xl text-white/60 max-w-3xl mx-auto mb-12 leading-relaxed">
+              The best way to sell with AI. Starts by assisting your team — evolves to driving your entire GTM strategy.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button onClick={() => setCurrentPage('contact')} className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2">
-                Start Building <ArrowRight size={18} />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <button onClick={() => setCurrentPage('contact')} className="btn-primary px-8 py-4 text-lg">
+                Talk to sales
               </button>
-              <button onClick={() => setCurrentPage('contact')} className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2">
-                Book Enterprise Demo <Play size={16} />
+              <button onClick={() => setCurrentPage('contact')} className="btn-secondary px-8 py-4 text-lg">
+                Try for free
               </button>
+            </div>
+
+            {/* Integrations Bar */}
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 mb-20">
+              {['HubSpot', 'Salesforce', 'Slack', 'Gmail', 'Apollo', 'Gong'].map((name) => (
+                <span key={name} className="text-sm font-bold tracking-widest">{name}</span>
+              ))}
+              <span className="text-xs font-medium px-3 py-1 bg-white/5 rounded-full border border-white/10">100+ integrations</span>
             </div>
           </motion.div>
 
-          {/* Hero Visual - Workflow Mockup */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-24 relative max-w-5xl mx-auto"
-          >
-            <div className="glass-card p-4 md:p-8 bg-black/40 border-white/10 shadow-2xl">
-              <div className="flex items-center gap-4 mb-8 border-b border-white/5 pb-4">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/50" />
+          {/* Hero Visual - Copilot/Autopilot */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="glass-card p-6 text-left"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center">
+                  <span className="font-bold text-brand-primary">SC</span>
                 </div>
-                <div className="text-xs text-white/30 font-mono">nexus-orchestrator / workflow-v4.yaml</div>
+                <div>
+                  <div className="font-bold text-sm">Sarah Chen</div>
+                  <div className="text-xs text-white/40">Account Executive</div>
+                </div>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                {/* Node 1 */}
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-4">
-                    <MessageSquare className="text-brand-primary" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Customer Intent</h4>
-                  <p className="text-xs text-white/40">Natural language processing & triage</p>
+              <div className="bg-white/5 rounded-lg p-4 mb-4 text-sm italic text-white/70">
+                "Follow up with all my stalled deals — check what's blocking them and send personalised nudges."
+              </div>
+              <div className="flex items-center justify-between p-3 bg-brand-primary/10 rounded-lg border border-brand-primary/20">
+                <div className="flex items-center gap-2">
+                  <Zap size={16} className="text-brand-primary" />
+                  <span className="text-sm font-bold">SuperGTM</span>
                 </div>
-                
-                {/* Connector */}
-                <div className="hidden md:flex flex-col items-center justify-center">
-                  <div className="w-full h-px bg-linear-to-r from-brand-primary to-brand-secondary" />
-                  <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] -mt-2.5 font-mono text-brand-primary">ORCHESTRATOR</div>
-                </div>
+                <span className="text-xs font-bold text-brand-primary">23 deals followed up</span>
+              </div>
+            </motion.div>
 
-                {/* Node 2 */}
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-lg bg-brand-secondary/20 flex items-center justify-center mb-4">
-                    <Database className="text-brand-secondary" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Tool Execution</h4>
-                  <p className="text-xs text-white/40">API calls & data retrieval</p>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="glass-card p-6 text-left"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-brand-secondary/20 flex items-center justify-center">
+                  <span className="font-bold text-brand-secondary">MJ</span>
+                </div>
+                <div>
+                  <div className="font-bold text-sm">Marcus Johnson</div>
+                  <div className="text-xs text-white/40">Customer Success Manager</div>
                 </div>
               </div>
-
-              <div className="mt-8 p-4 rounded-lg bg-black/60 border border-white/5 font-mono text-sm text-left">
-                <div className="flex gap-2 text-green-400 mb-1">
-                  <span>$</span>
-                  <span>nexus deploy --agent "Support-Ops"</span>
-                </div>
-                <div className="text-white/40">
-                  {`> Initializing Agent... [OK]`} <br />
-                  {`> Connecting to Salesforce... [OK]`} <br />
-                  {`> Workflow active: 142 executions/min`}
-                </div>
+              <div className="bg-white/5 rounded-lg p-4 mb-4 text-sm italic text-white/70">
+                "Check in on all accounts with low health scores and create personalised win-back plans for each."
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Problem Section */}
-      <section className="py-32 px-6 border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
-                Your team is buried in <br />
-                <span className="text-white/40">tasks humans shouldn't do.</span>
-              </h2>
-              <p className="text-lg text-white/50 mb-10 leading-relaxed">
-                AI is powerful, but adoption is fragmented. Nexus AI provides the enterprise-grade infrastructure to delegate repetitive operational tasks to an AI workforce.
-              </p>
-              <div className="space-y-6">
-                {[
-                  { icon: <Layers size={20} />, title: "Disconnected Tools", desc: "APIs don't talk to each other without manual code." },
-                  { icon: <Shield size={20} />, title: "Security Gaps", desc: "No governance over how agents access sensitive data." },
-                  { icon: <Zap size={20} />, title: "High Latency", desc: "Fragmented workflows lead to slow response times." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 text-brand-primary">{item.icon}</div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{item.title}</h4>
-                      <p className="text-sm text-white/40">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="flex items-center justify-between p-3 bg-brand-secondary/10 rounded-lg border border-brand-secondary/20">
+                <div className="flex items-center gap-2">
+                  <Zap size={16} className="text-brand-secondary" />
+                  <span className="text-sm font-bold">SuperGTM</span>
+                </div>
+                <span className="text-xs font-bold text-brand-secondary">8 win-back plans created</span>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="h-40 glass-card p-6 flex flex-col justify-end">
-                  <div className="text-2xl font-bold mb-2">90%</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Manual Handoffs</div>
-                </div>
-                <div className="h-60 glass-card p-6 bg-brand-primary/5 border-brand-primary/20 flex flex-col justify-end">
-                  <div className="text-2xl font-bold mb-2 text-brand-primary">12+</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Siloed AI Tools</div>
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="h-60 glass-card p-6 bg-brand-secondary/5 border-brand-secondary/20 flex flex-col justify-end">
-                  <div className="text-2xl font-bold mb-2 text-brand-secondary">400ms</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Average Latency</div>
-                </div>
-                <div className="h-40 glass-card p-6 flex flex-col justify-end">
-                  <div className="text-2xl font-bold mb-2">65%</div>
-                  <div className="text-xs text-white/40 uppercase tracking-wider">Dev Time on Plumbing</div>
-                </div>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Solution / How it Works */}
-      <section className="py-32 px-6 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">The Agent Operating System</h2>
-          <p className="text-lg text-white/50 max-w-2xl mx-auto">
-            Nexus AI provides the infrastructure to build, connect, and scale autonomous systems in four simple steps.
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
-          {[
-            { step: "01", title: "Define Goal", desc: "Set the objective in natural language or structured schema." },
-            { step: "02", title: "Create Agents", desc: "Deploy specialized agents with unique personas and skills." },
-            { step: "03", title: "Connect Tools", desc: "Link your APIs, databases, and internal systems instantly." },
-            { step: "04", title: "Deploy Workflows", desc: "Orchestrate multi-agent loops with full observability." }
-          ].map((item, i) => (
-            <div key={i} className="relative group">
-              <div className="text-6xl font-display font-bold text-white/5 mb-4 group-hover:text-brand-primary/20 transition-colors">{item.step}</div>
-              <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
-              <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              {i < 3 && <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-white/10" />}
-            </div>
-          ))}
+      {/* Social Proof / Logos */}
+      <section className="py-20 px-6 border-y border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-white/30 mb-12">Trusted by world-class teams</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all">
+            <div className="text-2xl font-bold font-display">CANVA</div>
+            <div className="text-2xl font-bold font-display">AUTODESK</div>
+            <div className="text-2xl font-bold font-display">KPMG</div>
+            <div className="text-2xl font-bold font-display">DATABRICKS</div>
+            <div className="text-2xl font-bold font-display">CONFLUENT</div>
+          </div>
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* Quote Section */}
       <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Built for Enterprise Scale</h2>
-              <p className="text-lg text-white/50">
-                Everything you need to move from experimental prototypes to production-ready autonomous systems.
-              </p>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-12 leading-tight">
+            "We're looking for every place where AI can allow sellers and customer success reps to be more engaged with customers."
+          </h2>
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 rounded-full bg-white/10 mb-4 overflow-hidden">
+              <img src="https://picsum.photos/seed/rob/200" alt="Rob Giglio" referrerPolicy="no-referrer" />
             </div>
-            <button onClick={() => setCurrentPage('product')} className="btn-secondary flex items-center gap-2">
-              View All Features <ChevronRight size={18} />
-            </button>
+            <div className="font-bold">Rob Giglio</div>
+            <div className="text-sm text-white/40">Chief Customer Officer</div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Adoption Roadmap */}
+      <section className="py-32 px-6 bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Our AI adoption roadmap</h2>
+            <p className="text-lg text-white/50 max-w-2xl mx-auto">
+              Start wherever you are. Delegatio grows with you and evolves as models improve. No rip and replace — ever.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-8">
             {[
-              { icon: <Bot />, title: "Visual Agent Builder", desc: "No-code interface to define agent logic, memory, and tool access." },
-              { icon: <Workflow />, title: "Orchestration Engine", desc: "Handle complex loops, parallel execution, and error recovery." },
-              { icon: <Database />, title: "Context & Memory", desc: "Long-term vector memory and short-term session context for every agent." },
-              { icon: <Shield />, title: "Enterprise Governance", desc: "RBAC, audit logs, and secure tool execution in sandboxed environments." },
-              { icon: <BarChart3 />, title: "Observability", desc: "Real-time monitoring of agent costs, latency, and success rates." },
-              { icon: <Globe />, title: "Universal Connectors", desc: "100+ pre-built integrations with SaaS, databases, and custom APIs." }
+              { level: "L1. Assisted", title: "Delegating busywork", desc: "Start by delegating busywork - research, CRM updates, drafting emails - to SuperGTM. You steer, and it accelerates." },
+              { level: "L2. Copilot", title: "Teach playbooks", desc: "Teach SuperGTM about your playbooks. It starts to own end-to-end workflows like outbound, or meeting preparation." },
+              { level: "L3. Autopilot", title: "AI Workforces", desc: "As playbooks solidify, turn them into AI Workforces that run autonomously, acting on pipeline signals. You handle escalations." },
+              { level: "L4. Self-Driving", title: "Self-Optimizing", desc: "Your AI workforces optimize themselves, building new agents and running their own tests. You lead strategy." }
             ].map((item, i) => (
-              <div key={i} className="glass-card p-8 hover:border-white/20 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-brand-primary/10 group-hover:text-brand-primary transition-colors">
-                  {item.icon}
-                </div>
-                <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
+              <div key={i} className="glass-card p-8 hover:border-brand-primary/30 transition-all">
+                <div className="text-xs font-bold text-brand-primary uppercase tracking-widest mb-4">{item.level}</div>
+                <h4 className="text-xl font-bold mb-3">{item.title}</h4>
                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -389,115 +336,198 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Delegate to SuperGTM */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
+              Delegate to SuperGTM
+            </h2>
+            <p className="text-lg text-white/50 mb-10 leading-relaxed">
+              SuperGTM is your team's AI teammate. It joins their calls. It sits in their calendar, email, and CRM. Reps start delegating from day one — without changing how they work.
+            </p>
+            <button onClick={() => setCurrentPage('contact')} className="btn-primary">Delegate to SuperGTM</button>
+          </div>
+          <div className="glass-card p-6 bg-black/40 border-white/10 shadow-2xl">
+            <div className="space-y-4">
+              <div className="flex justify-end">
+                <div className="bg-brand-primary/20 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[80%]">
+                  @Enrichment Agent Hey I'm just about to jump on a call with James Baxter from Meridian
+                </div>
+              </div>
+              <div className="flex justify-start">
+                <div className="bg-white/5 text-white/70 p-3 rounded-2xl rounded-tl-none text-sm max-w-[80%]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-5 h-5 rounded-full bg-brand-primary flex items-center justify-center text-[10px] text-black font-bold">EA</div>
+                    <span className="font-bold text-xs">Enrichment Agent</span>
+                  </div>
+                  Searching Apollo for contact details... <br />
+                  Found James Baxter - VP of Sales <br />
+                  Checking LinkedIn profile... <br />
+                  Recent post about Q4 pipeline challenges
+                </div>
+              </div>
+              <div className="flex justify-start">
+                <div className="bg-white/10 text-white p-4 rounded-2xl rounded-tl-none text-sm max-w-[90%] border border-white/10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Zap size={14} className="text-brand-primary" />
+                    <span className="font-bold text-xs">Relly</span>
+                  </div>
+                  <div className="font-bold mb-2">Here's 4 things you need to know:</div>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• James is VP of Sales at Meridian, reports to CEO</li>
+                    <li>• They just raised $24M Series B - likely expanding</li>
+                    <li>• Recent posts mention struggles with pipeline visibility</li>
+                    <li>• Your team met with him 3 times - budget approval in Q1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Build AI Workforces */}
       <section className="py-32 px-6 bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass-card p-6 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center mb-4">
+                  <Workflow className="text-brand-primary" />
+                </div>
+                <h4 className="font-bold text-sm">Lead Router</h4>
+              </div>
+              <div className="glass-card p-6 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-brand-secondary/20 flex items-center justify-center mb-4">
+                  <Search className="text-brand-secondary" />
+                </div>
+                <h4 className="font-bold text-sm">Enrichment Agent</h4>
+              </div>
+              <div className="col-span-2 glass-card p-6 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Bot className="text-purple-400" />
+                </div>
+                <h4 className="font-bold text-sm">Outbound SDR</h4>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
+              Build AI workforces
+            </h2>
+            <p className="text-lg text-white/50 mb-10 leading-relaxed">
+              Build optimized teams of agents that run autonomously, triggered by events or signals. Inbound, outbound, onboarding, expansion — fully automated.
+            </p>
+            <button onClick={() => setCurrentPage('product')} className="btn-secondary">Explore Workforces</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise Infrastructure */}
+      <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">AI-Driven Supply Chain Excellence</h2>
-            <p className="text-lg text-white/50 max-w-2xl mx-auto">
-              Nexus AI orchestrates complex procurement and logistics workflows, moving from manual tracking to autonomous execution.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Enterprise-grade infrastructure</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { 
-                tag: "Procurement", 
-                title: "Autonomous Sourcing Agent", 
-                desc: "Automatically triages incoming requests, searches global vendor databases, and generates RFPs based on historical pricing and quality data.",
-                outcome: "85% reduction in sourcing cycle time"
-              },
-              { 
-                tag: "Logistics", 
-                title: "Multi-Carrier Orchestrator", 
-                desc: "Agents that coordinate between carriers, warehouses, and customs, resolving delays and optimizing routes in real-time.",
-                outcome: "22% decrease in shipping costs"
-              },
-              { 
-                tag: "Inventory", 
-                title: "Predictive Stock Replenishment", 
-                desc: "Monitors stock levels across global nodes and autonomously triggers reorders based on lead times and demand signals.",
-                outcome: "Zero stock-outs on critical SKUs"
-              },
-              { 
-                tag: "Risk Management", 
-                title: "Supplier Risk Monitor", 
-                desc: "Scours financial reports, news, and geopolitical signals to alert and reroute supply chains before disruptions occur.",
-                outcome: "Real-time resilience for global ops"
-              }
+              { icon: <Shield />, title: "SOC 2 Type II & GDPR", desc: "Independently audited and certified compliant. Your data stays protected." },
+              { icon: <Lock />, title: "SSO & RBAC", desc: "Enterprise SSO with role-based access control for your whole team." },
+              { icon: <Globe />, title: "Data residency", desc: "Multi-region deployment ensures your data stays within your region." },
+              { icon: <Workflow />, title: "Version control", desc: "Full version history on every agent. Roll back instantly when needed." },
+              { icon: <BarChart3 />, title: "Monitoring & Evals", desc: "Understand agent activity, how much they cost and catch regressions." },
+              { icon: <CheckCircle2 />, title: "Trust center", desc: "Pre-built security documentation, DPA templates, and a trust center." }
             ].map((item, i) => (
-              <div key={i} className="glass-card overflow-hidden flex flex-col md:flex-row">
-                <div className="md:w-1/3 bg-white/5 p-8 flex flex-col justify-between border-r border-white/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-primary">{item.tag}</span>
-                  <div className="mt-8">
-                    <div className="text-sm text-white/40 mb-1">Key Outcome:</div>
-                    <div className="text-sm font-semibold">{item.outcome}</div>
-                  </div>
+              <div key={i} className="glass-card p-8">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 text-brand-primary">
+                  {item.icon}
                 </div>
-                <div className="md:w-2/3 p-8">
-                  <h4 className="text-xl font-bold mb-4">{item.title}</h4>
-                  <p className="text-white/50 text-sm mb-6 leading-relaxed">{item.desc}</p>
-                  <button onClick={() => setCurrentPage('use-cases')} className="text-sm font-semibold flex items-center gap-2 hover:text-brand-primary transition-colors">
-                    Read Case Study <ArrowRight size={14} />
-                  </button>
-                </div>
+                <h4 className="text-lg font-bold mb-3">{item.title}</h4>
+                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
+      {/* Featured Agents */}
+      <section className="py-32 px-6 bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Connect agents to 1,000+ apps</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "BDR Agent", desc: "Your always-on sales development rep that engages leads instantly and drives pipeline 24/7." },
+              { title: "Research Agent", desc: "AI handles your research so you don't have to. Every call fully prepped with the right insights." },
+              { title: "Inbound Qualification", desc: "Instantly qualify and route every inbound lead. No more missed opportunities." },
+              { title: "Customer Support Agent", desc: "Resolve tickets faster with AI that understands your product and customers." }
+            ].map((agent, i) => (
+              <div key={i} className="glass-card p-8 flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center mb-6">
+                  <Bot className="text-brand-primary" />
+                </div>
+                <h4 className="text-xl font-bold mb-3">{agent.title}</h4>
+                <p className="text-white/50 text-sm mb-8 flex-grow leading-relaxed">{agent.desc}</p>
+                <button className="text-sm font-bold text-brand-primary flex items-center gap-2 hover:underline">
+                  View template <ArrowRight size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Task List Comparison */}
       <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1000" 
-              alt="Nexus AI Team" 
-              className="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute -bottom-6 -right-6 glass-card p-8 max-w-xs">
-              <p className="text-sm italic text-white/70">"Our mission is to bridge the gap between AI potential and operational reality in the supply chain."</p>
-              <div className="mt-4 font-bold text-brand-primary">— Nexus AI Founders</div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-display font-bold mb-6">Delegate 50% of GTM work to AI</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold text-white/30 uppercase tracking-widest mb-6">Manual Tasks</h4>
+              {[
+                "Update CRM after every call",
+                "Log meeting notes in Salesforce",
+                "Chase no-show prospects",
+                "Personalize cold emails",
+                "Enrich lead data manually",
+                "Build QBR slide decks"
+              ].map((task, i) => (
+                <div key={i} className="flex items-center gap-3 text-white/50 line-through decoration-white/20">
+                  <X size={16} className="text-red-500/50" />
+                  <span className="text-sm">{task}</span>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold text-brand-primary uppercase tracking-widest mb-6">Delegated to AI</h4>
+              {[
+                "Review Gong recordings",
+                "Summarize sales calls",
+                "Follow up on sent proposals",
+                "Map account stakeholders",
+                "Research prospects before meetings",
+                "Track champion job changes"
+              ].map((task, i) => (
+                <div key={i} className="flex items-center gap-3 text-white/80">
+                  <CheckCircle2 size={16} className="text-brand-primary" />
+                  <span className="text-sm">{task}</span>
+                </div>
+              ))}
             </div>
           </div>
-          <div>
-            <h2 className="text-4xl font-display font-bold mb-8">Built by Supply Chain Experts, <span className="text-gradient">Powered by AI.</span></h2>
-            <p className="text-lg text-white/50 mb-6 leading-relaxed">
-              Nexus AI was founded by a team of logistics veterans and AI researchers from DeepMind and MIT. We saw firsthand how fragmented data and manual processes were crippling global trade.
-            </p>
-            <p className="text-lg text-white/50 mb-10 leading-relaxed">
-              Today, we provide the "Agent OS" that powers the world's most resilient supply chains, enabling autonomous execution from the first mile to the last.
-            </p>
-            <button onClick={() => setCurrentPage('about')} className="btn-secondary">Learn More About Our Vision</button>
-          </div>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-20 px-6 border-y border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale">
-          <div className="text-2xl font-bold font-display">STRIPE</div>
-          <div className="text-2xl font-bold font-display">VERCEL</div>
-          <div className="text-2xl font-bold font-display">NOTION</div>
-          <div className="text-2xl font-bold font-display">OPENAI</div>
-          <div className="text-2xl font-bold font-display">ANTHROPIC</div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* Final CTA */}
       <section className="py-32 px-6">
         <div className="max-w-5xl mx-auto glass-card p-12 md:p-20 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-brand-primary/10 to-brand-secondary/10 -z-10" />
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Ready to build the future?</h2>
-          <p className="text-lg text-white/60 max-w-xl mx-auto mb-12">
-            Join 500+ enterprises building autonomous systems on Nexus AI. Start your 14-day free trial today.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button onClick={() => setCurrentPage('contact')} className="btn-primary px-10">Get Started Free</button>
-            <button onClick={() => setCurrentPage('contact')} className="btn-secondary px-10">Talk to Sales</button>
-          </div>
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">Delegate 50% of GTM work to AI Agents within 6 months</h2>
+          <button onClick={() => setCurrentPage('contact')} className="btn-primary px-12 py-4 text-xl">Book a demo</button>
         </div>
       </section>
     </div>
@@ -509,9 +539,9 @@ const ProductPage = () => {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">The Infrastructure for <span className="text-gradient">Autonomous Systems</span></h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">The Infrastructure for <span className="text-gradient">AI GTM Workforces</span></h1>
           <p className="text-xl text-white/50 leading-relaxed">
-            Nexus AI is more than a builder. It's a complete execution environment designed for the rigors of enterprise automation.
+            Delegatio AI is more than a builder. It's a complete execution environment designed for the rigors of enterprise sales and marketing automation.
           </p>
         </div>
 
@@ -522,12 +552,12 @@ const ProductPage = () => {
               <div className="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-6">
                 <Bot />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Visual Agent Studio</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Agent Workforce Studio</h2>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Define agent personas, system instructions, and tool access in a powerful visual interface. No more wrestling with complex YAML files or brittle code.
+                Define agent personas for SDRs, CSMs, and Marketing Ops. Set system instructions, and tool access in a powerful visual interface.
               </p>
               <ul className="space-y-4">
-                {['Dynamic Prompt Templates', 'Tool Access Control', 'Model Agnostic (GPT-4, Claude 3, Gemini)', 'Persona Versioning'].map((item, i) => (
+                {['GTM-Specific Prompt Templates', 'Sales Tool Access Control', 'Model Agnostic (GPT-4, Claude 3, Gemini)', 'Persona Versioning'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/70">
                     <CheckCircle2 size={18} className="text-brand-primary" />
                     {item}
@@ -537,7 +567,7 @@ const ProductPage = () => {
             </div>
             <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
                 alt="Agent Builder UI" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
@@ -549,7 +579,7 @@ const ProductPage = () => {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1551288049-bbda38a5f9a2?auto=format&fit=crop&q=80&w=1200" 
                 alt="Orchestration Graph" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
@@ -559,12 +589,12 @@ const ProductPage = () => {
               <div className="w-12 h-12 rounded-xl bg-brand-secondary/10 text-brand-secondary flex items-center justify-center mb-6">
                 <Workflow />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Orchestration Engine</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">GTM Orchestration Engine</h2>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Manage multi-agent conversations and complex loops. Our engine handles the state, memory, and routing between specialized agents automatically.
+                Manage multi-agent conversations between your Research Agent and Outbound SDR. Our engine handles the state, memory, and routing automatically.
               </p>
               <ul className="space-y-4">
-                {['Parallel Execution', 'Conditional Routing', 'Human-in-the-loop Gates', 'Automatic Error Recovery'].map((item, i) => (
+                {['Lead Routing Logic', 'Conditional Outreach', 'Human-in-the-loop Approval Gates', 'Automatic CRM Sync'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/70">
                     <CheckCircle2 size={18} className="text-brand-secondary" />
                     {item}
@@ -580,12 +610,12 @@ const ProductPage = () => {
               <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6">
                 <Database />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Knowledge & Memory (RAG)</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Sales Intelligence & Memory</h2>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Give your agents a memory. Nexus AI automatically indexes your documents and databases, providing agents with relevant context in real-time.
+                Give your agents a memory. Delegatio AI automatically indexes your CRM, call transcripts, and market data, providing agents with relevant context.
               </p>
               <ul className="space-y-4">
-                {['Vector Database Integration', 'Automatic Document Chunking', 'Session-based Short-term Memory', 'Global Knowledge Bases'].map((item, i) => (
+                {['CRM Data Integration', 'Call Transcript Analysis', 'Account-based Short-term Memory', 'Global Market Knowledge Bases'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/70">
                     <CheckCircle2 size={18} className="text-purple-400" />
                     {item}
@@ -595,7 +625,7 @@ const ProductPage = () => {
             </div>
             <div className="glass-card overflow-hidden aspect-video bg-white/5 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200" 
                 alt="Knowledge Base UI" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                 referrerPolicy="no-referrer"
@@ -718,7 +748,7 @@ const DocsPage = () => {
         <main className="max-w-3xl">
           <div className="mb-12">
             <h1 className="text-4xl font-display font-bold mb-4">Quickstart Guide</h1>
-            <p className="text-lg text-white/50">Learn how to build and deploy your first autonomous agent in under 5 minutes.</p>
+            <p className="text-lg text-white/50">Learn how to build and deploy your first autonomous GTM agent in under 5 minutes.</p>
           </div>
 
           <div className="space-y-12">
@@ -729,7 +759,7 @@ const DocsPage = () => {
               </h2>
               <div className="bg-black/60 rounded-xl p-6 border border-white/5 font-mono text-sm">
                 <div className="text-white/40 mb-2"># Install via npm</div>
-                <div className="text-brand-primary">npm install @nexus-ai/sdk</div>
+                <div className="text-brand-primary">npm install @delegatio-ai/sdk</div>
               </div>
             </section>
 
@@ -740,14 +770,14 @@ const DocsPage = () => {
               </h2>
               <div className="bg-black/60 rounded-xl p-6 border border-white/5 font-mono text-sm overflow-x-auto">
                 <pre className="text-white/70">
-{`import { Nexus } from '@nexus-ai/sdk';
+{`import { Delegatio } from '@delegatio-ai/sdk';
 
-const nexus = new Nexus({ apiKey: 'YOUR_API_KEY' });
+const delegatio = new Delegatio({ apiKey: 'YOUR_API_KEY' });
 
-const agent = await nexus.agents.create({
-  name: 'Support-Bot',
-  role: 'Customer Support Specialist',
-  tools: ['salesforce', 'zendesk'],
+const agent = await delegatio.agents.create({
+  name: 'SDR-Agent',
+  role: 'Outbound Sales Development Representative',
+  tools: ['salesforce', 'apollo', 'gmail'],
   memory: true
 });`}
                 </pre>
@@ -763,7 +793,7 @@ const agent = await nexus.agents.create({
               <div className="bg-black/60 rounded-xl p-6 border border-white/5 font-mono text-sm">
                 <pre className="text-white/70">
 {`const result = await agent.run({
-  goal: 'Find the latest order for user #123 and update the status to Shipped'
+  goal: 'Find 10 high-intent leads in the SaaS sector and send personalized outreach'
 });`}
                 </pre>
               </div>
@@ -780,9 +810,9 @@ const AboutPage = () => {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-32">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">From Copilots to <span className="text-gradient">Autonomous Systems</span></h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">From Headcount to <span className="text-gradient">AI Workforces</span></h1>
           <p className="text-xl text-white/50 leading-relaxed mb-8">
-            We believe the next decade of software won't be built around interfaces, but around intent. Our mission is to provide the infrastructure that makes autonomous AI safe, reliable, and accessible to every enterprise.
+            We believe the next decade of GTM won't be built around hiring more people, but around delegating to AI. Our mission is to provide the infrastructure that makes autonomous sales and marketing safe, reliable, and accessible to every enterprise.
           </p>
           <div className="flex gap-12">
             <div>
@@ -807,7 +837,7 @@ const AboutPage = () => {
           <div>
             <h2 className="text-3xl font-display font-bold mb-6">Our Vision</h2>
             <p className="text-lg text-white/50 mb-8 leading-relaxed">
-              The first wave of AI was about chat. The second wave is about action. We are building the "Agent OS"—the fundamental software layer that allows AI to navigate the digital world just as humans do, but with infinite scale.
+              The first wave of GTM was about CRM. The second wave is about automation. We are building the "GTM OS"—the fundamental software layer that allows AI to drive your entire sales strategy with infinite scale.
             </p>
             <p className="text-lg text-white/50 leading-relaxed">
               Based in San Francisco and London, our team comes from OpenAI, DeepMind, and Stripe, bringing together expertise in large-scale ML and enterprise infrastructure.
@@ -815,8 +845,24 @@ const AboutPage = () => {
           </div>
         </div>
 
+        <div className="mb-32">
+          <h2 className="text-3xl font-display font-bold mb-12 text-center">Why Delegatio AI?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Built for GTM", desc: "Unlike generic agent platforms, Delegatio is built specifically for the nuances of sales, marketing, and customer success." },
+              { title: "Enterprise-Grade", desc: "SOC 2 Type II, GDPR, and HIPAA compliant. We provide the security and reliability that enterprises demand." },
+              { title: "Autonomous Execution", desc: "Our agents don't just suggest actions; they execute them across your entire tool stack autonomously." }
+            ].map((item, i) => (
+              <div key={i} className="glass-card p-8">
+                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="text-center py-20 border-t border-white/5">
-          <h2 className="text-3xl font-display font-bold mb-8">Join the Orchestration Revolution</h2>
+          <h2 className="text-3xl font-display font-bold mb-8">Join the GTM Revolution</h2>
           <p className="text-white/50 mb-12">We're always looking for brilliant minds to help us build the future of AI.</p>
           <button className="btn-primary">View Open Roles</button>
         </div>
@@ -830,18 +876,18 @@ const BlogPage = () => {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Nexus Insights</h1>
-          <p className="text-xl text-white/50">The latest on agent architectures, orchestration patterns, and AI ops.</p>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Delegatio Insights</h1>
+          <p className="text-xl text-white/50">The latest on GTM agents, sales orchestration, and AI-driven growth.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { date: "Mar 15, 2026", title: "The Rise of Multi-Agent Orchestration", desc: "Why single agents aren't enough for complex enterprise workflows." },
-            { date: "Mar 08, 2026", title: "Securing Tool Access for Autonomous Agents", desc: "Best practices for implementing RBAC and sandboxing in agentic systems." },
-            { date: "Feb 28, 2026", title: "Nexus AI v2.0: What's New?", desc: "Deep dive into our new visual builder and orchestration engine." },
-            { date: "Feb 20, 2026", title: "Agentic RAG: Beyond Simple Retrieval", desc: "How agents use memory to handle long-running business processes." },
-            { date: "Feb 12, 2026", title: "Case Study: Automating Procurement at Scale", desc: "How a Fortune 500 company saved 10k hours with Nexus AI." },
-            { date: "Feb 05, 2026", title: "The Future of Human-in-the-Loop", desc: "Designing effective gates for autonomous AI systems." }
+            { date: "Mar 15, 2026", title: "The Rise of AI Sales Workforces", desc: "Why single SDRs aren't enough for complex enterprise GTM strategies." },
+            { date: "Mar 08, 2026", title: "Securing CRM Access for Autonomous Agents", desc: "Best practices for implementing RBAC and data residency in sales systems." },
+            { date: "Feb 28, 2026", title: "Delegatio AI v2.0: What's New?", desc: "Deep dive into our new GTM orchestration engine and CRM sync." },
+            { date: "Feb 20, 2026", title: "Agentic Outreach: Beyond Simple Templates", desc: "How agents use account intelligence to handle long-running sales cycles." },
+            { date: "Feb 12, 2026", title: "Case Study: Automating SDR Work at Scale", desc: "How a Fortune 500 company booked 100+ meetings with Delegatio AI." },
+            { date: "Feb 05, 2026", title: "The Future of AI-Driven GTM", desc: "Designing effective human-in-the-loop gates for autonomous sales systems." }
           ].map((post, i) => (
             <div key={i} className="glass-card overflow-hidden group cursor-pointer hover:border-white/20 transition-all">
               <div className="h-48 bg-white/5 border-b border-white/5" />
@@ -946,37 +992,37 @@ const UseCasesPage = () => {
     <div className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">Supply Chain & Procurement</h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">GTM & Sales Workforces</h1>
           <p className="text-xl text-white/50 max-w-2xl mx-auto">
-            Orchestrating the future of global trade with autonomous agents.
+            Orchestrating the future of Go-To-Market with autonomous agents.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {[
             { 
-              title: "Autonomous Strategic Sourcing", 
-              problem: "Manual vendor discovery and RFP management takes months and misses optimal pricing.",
-              solution: "Agents that scan global markets, verify supplier credentials, and run automated RFP cycles.",
-              outcome: "80% faster sourcing cycle and 12% average cost reduction."
+              title: "Autonomous Outbound SDRs", 
+              problem: "Manual prospecting and personalized outreach takes hours and has low conversion.",
+              solution: "Agents that research accounts, verify intent signals, and send hyper-personalized nudges.",
+              outcome: "90 meetings booked per month and 5x higher conversion rate."
             },
             { 
-              title: "Real-time Logistics Orchestration", 
-              problem: "Fragmented communication between carriers leads to delays and hidden costs.",
-              solution: "Multi-agent systems that track shipments, handle customs documentation, and reroute dynamically.",
-              outcome: "95% on-time delivery rate and zero manual tracking required."
+              title: "Real-time Lead Enrichment", 
+              problem: "Fragmented data across Apollo, LinkedIn, and CRM leads to missed opportunities.",
+              solution: "Multi-agent systems that enrich leads instantly and route them to the right AE.",
+              outcome: "100% lead coverage and zero manual data entry required."
             },
             { 
-              title: "Intelligent Inventory Management", 
-              problem: "Overstocking and stock-outs due to disconnected demand signals and lead times.",
-              solution: "Agents that monitor ERP data and external market trends to trigger autonomous replenishment.",
-              outcome: "30% reduction in carrying costs and 100% availability of critical parts."
+              title: "Intelligent Customer Success", 
+              problem: "Inability to monitor thousands of accounts for churn risks or upsell signals.",
+              solution: "Agents that monitor health scores and create personalized win-back plans.",
+              outcome: "20% reduction in churn and 15% increase in expansion revenue."
             },
             { 
-              title: "Supplier Risk & Compliance", 
-              problem: "Inability to monitor thousands of suppliers for financial, environmental, or geopolitical risks.",
-              solution: "Agents that continuously audit supplier data and news signals to flag risks instantly.",
-              outcome: "Proactive mitigation of 90% of potential supply chain disruptions."
+              title: "Sales Ops & CRM Automation", 
+              problem: "Dirty CRM data and manual reporting slowing down the sales cycle.",
+              solution: "Agents that continuously audit CRM data and generate real-time health reports.",
+              outcome: "Proactive mitigation of 90% of potential deal slippage."
             }
           ].map((item, i) => (
             <div key={i} className="glass-card p-12">
